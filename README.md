@@ -7,34 +7,6 @@
 Xilinx 14.7
 Spartan6 FPGA
 
-## LOGIC DIAGRAM
-
-### ENCODER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/3cd1f95e-7531-4cad-9154-fdd397ac439e)
-
-
-### DECODER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
-
-
-### MULTIPLEXER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
-
-
-### DEMULTIPLEXER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
-
-
-### MAGNITUDE COMPARATOR
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
-
-
-  
 ## PROCEDURE:
 #### STEP:1  Start  the Xilinx navigator, Select and Name the New project.
 #### STEP:2  Select the device family, device, package and speed.       
@@ -48,8 +20,15 @@ Spartan6 FPGA
 #### STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
 #### STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
 
-## VERILOG CODE
+
+
 ## ENCODER
+### LOGIC DIAGRAM
+
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/3cd1f95e-7531-4cad-9154-fdd397ac439e)
+
+## VERILOG CODE
 ```
 module EC(e0,e1,e2,e3,e4,e5,e6,e7,d0,d1,d2);
 input e0,e1,e2,e3,e4,e5,e6,e7;
@@ -59,7 +38,13 @@ or g2(d1,e2,e3,e6,e7);
 or g3(d2,e4,e5,e6,e7);
 endmodule
 ```
+### OUTPUT WAVEFORM
+![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/403cbdf7-33c1-4835-9f83-ec6e1af0b506)
+
 ## DECODER
+### LOGIC DIAGRAM
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
+### VERILOG CODE
 ```
 module dec3to8(d0,d1,d2,y0, y1,y2,y3,y4,y5,y6,y7);
 input d0,d1,d2;
@@ -79,7 +64,15 @@ and g11(y7,d0,d1,d2);
 endmodule
 
 ```
+### OUTPUT WAVEFORM
+![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/e60f5616-8741-4a63-a2d9-a53b4fd9ad24)
+
 ## MULTIPLEXER
+
+### LOGIC DIAGRAM
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
+
+### VERILOG CODE
 ```
 module mux(a,s,y);
 input [7:0]a;
@@ -101,7 +94,15 @@ endcase
 end
 endmodule
 ```
+### OUTPUT WAVEFORM
+![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/b460796d-facc-4276-a799-c4990f2367c3)
+
 ## DEMULTIPLEXER
+
+### LOGIC DIAGRAM
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
+
+### VERILOG CODE
 ```
 module demux_1_to_4(
     input d,
@@ -120,7 +121,15 @@ assign y2 = d & s0n & s1;
 assign y3 = d & s0 & s1;
 endmodule
 ```
+### OUTPUT WAVEFORM
+![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/1a8130e2-7fb9-4e8e-9516-cac4a3a0addb)
+
 ## MAGNITUDE COMPARATOR
+
+### LOGIC DIAGRAM
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
+
+### VERILOG CODE
 ```
 module magcomp(a, b, eq, lt, gt);
   input [3:0] a,b;
@@ -152,20 +161,8 @@ module magcomp(a, b, eq, lt, gt);
   end
   endmodule
 ```
-
-## OUTPUT WAVEFORM
-
-## ENCODER
-![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/403cbdf7-33c1-4835-9f83-ec6e1af0b506)
-## DECODER
-![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/e60f5616-8741-4a63-a2d9-a53b4fd9ad24)
-## MULTIPLEXER
-![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/b460796d-facc-4276-a799-c4990f2367c3)
-## DEMULTIPLEXER
-![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/1a8130e2-7fb9-4e8e-9516-cac4a3a0addb)
-## MAGNITUDE COMPARATOR
+### OUTPUT WAVEFORM
 ![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-2/assets/166893766/2a8d4714-79e6-499b-84cc-f759fc17964c)
-
 
 ## RESULT:
           Thus,The Encoder, Decoder, Multiplexer, Demultiplexer,Magnitude Comparator are implemented and simulated successfully using Xilinx ISE.
